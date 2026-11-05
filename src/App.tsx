@@ -1,11 +1,39 @@
+const profile = {
+  name: "James Matthew C. Garcia",
+  shortName: "James Garcia",
+  email: "Jamesgarcia862@gmail.com",
+  location: "Cebu City, Philippines",
+  github: "https://github.com/Jamesheytz2315",
+  linkedin: "", // TODO: paste your LinkedIn URL here. It stays hidden while empty.
+  resume: "/resume/James-Garcia-Resume.pdf",
+};
+
+const stack = [
+  { label: "Backend", items: ["Laravel", "PHP"] },
+  { label: "Frontend", items: ["Vue", "Tailwind CSS"] },
+  { label: "Database", items: ["MySQL"] },
+  { label: "Environment", items: ["Docker"] },
+];
+
+const skills = [
+  { label: "Backend", items: ["PHP", "Laravel", "MySQL"] },
+  { label: "Frontend", items: ["Vue", "React", "HTML", "CSS", "Tailwind"] },
+  { label: "Languages", items: ["C", "Python", "Java"] },
+  { label: "Tools", items: ["Docker"] },
+];
+
+const certifications = [
+  { title: "DataCamp: Associate Data Analyst", year: "2024" },
+  { title: "PhilNITS: Half passer", year: "2025" },
+];
+
 const interests = [
   {
     number: "01",
     title: "Music",
-    description:
-      "There is almost always a soundtrack playing while I work, rest, or explore new ideas.",
+    description: "There is almost always a soundtrack playing while I work, rest, or explore new ideas.",
     visual: (
-      <div className="flex h-28 items-end gap-2">
+      <div className="flex h-20 items-end gap-2">
         {[32, 62, 45, 84, 55, 72, 38].map((height, index) => (
           <span
             className="w-2 rounded-full bg-current"
@@ -19,72 +47,61 @@ const interests = [
   {
     number: "02",
     title: "Fitness",
-    description:
-      "Training keeps me disciplined, focused, and always working toward a better version of myself.",
+    description: "Training keeps me disciplined, focused, and always working toward a better version of myself.",
     visual: (
       <div className="flex items-center">
-        <span className="h-20 w-3 border-y-8 border-current" />
-        <span className="h-px w-24 bg-current" />
-        <span className="h-20 w-3 border-y-8 border-current" />
+        <span className="h-16 w-3 border-y-8 border-current" />
+        <span className="h-px w-20 bg-current" />
+        <span className="h-16 w-3 border-y-8 border-current" />
       </div>
     ),
   },
   {
     number: "03",
     title: "Flag football",
-    description:
-      "I enjoy the speed, teamwork, and quick decision-making that come with every game.",
+    description: "I enjoy the speed, teamwork, and quick decision-making that come with every game.",
     visual: (
-      <div className="flex size-28 rotate-[-28deg] items-center justify-center rounded-[50%] border-2 border-current">
-        <span className="h-16 w-px bg-current" />
-        <span className="absolute h-px w-12 bg-current" />
+      <div className="flex size-20 rotate-[-28deg] items-center justify-center rounded-[50%] border-2 border-current">
+        <span className="h-12 w-px bg-current" />
+        <span className="absolute h-px w-10 bg-current" />
       </div>
     ),
   },
   {
     number: "04",
     title: "Games",
-    description:
-      "Games are where I unwind, solve problems, and appreciate the details behind great experiences.",
+    description: "Games are where I unwind, solve problems, and appreciate the details behind great experiences.",
     visual: (
-      <div className="relative h-20 w-32 rounded-[2rem] border-2 border-current">
-        <span className="absolute left-6 top-1/2 h-1 w-8 -translate-y-1/2 bg-current" />
-        <span className="absolute left-[2.35rem] top-1/2 h-8 w-1 -translate-y-1/2 bg-current" />
-        <span className="absolute right-7 top-7 size-3 rounded-full border border-current" />
-        <span className="absolute right-11 top-11 size-3 rounded-full border border-current" />
+      <div className="relative h-16 w-28 rounded-[2rem] border-2 border-current">
+        <span className="absolute left-5 top-1/2 h-1 w-7 -translate-y-1/2 bg-current" />
+        <span className="absolute left-[2rem] top-1/2 h-7 w-1 -translate-y-1/2 bg-current" />
+        <span className="absolute right-6 top-5 size-3 rounded-full border border-current" />
+        <span className="absolute right-10 top-9 size-3 rounded-full border border-current" />
       </div>
     ),
   },
 ];
 
-const principles = [
-  {
-    number: "01",
-    title: "Stay curious",
-    description: "Ask good questions and keep learning beyond the classroom.",
-  },
-  {
-    number: "02",
-    title: "Keep moving",
-    description: "Build momentum through consistency, in code and in life.",
-  },
-  {
-    number: "03",
-    title: "Play as a team",
-    description: "Listen well, communicate clearly, and help others succeed.",
-  },
-];
-
 function ArrowIcon() {
   return (
-    <svg
-      aria-hidden="true"
-      className="size-4"
-      fill="none"
-      viewBox="0 0 16 16"
-    >
+    <svg aria-hidden="true" className="size-4" fill="none" viewBox="0 0 16 16">
       <path d="M3 13 13 3M5 3h8v8" stroke="currentColor" strokeWidth="1.5" />
     </svg>
+  );
+}
+
+function Tags({ items }: { items: string[] }) {
+  return (
+    <ul className="flex flex-wrap gap-2">
+      {items.map((item) => (
+        <li
+          className="rounded-full border border-current/25 px-4 py-2 text-sm"
+          key={item}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
   );
 }
 
@@ -92,25 +109,25 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f2f2ed] text-[#11110f]">
       <header className="sticky top-0 z-20 border-b border-black/25 bg-[#f2f2ed]/95 backdrop-blur-sm">
-        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between px-5 md:px-10">
-          <a className="font-semibold tracking-tight" href="#top">
-            YOUR NAME
+        <div className="mx-auto flex h-16 max-w-[1440px] items-center justify-between gap-4 px-5 md:px-10">
+          <a className="whitespace-nowrap font-semibold tracking-tight" href="#top">
+            {profile.shortName}
           </a>
-          <nav aria-label="Primary navigation">
-            <ul className="flex items-center gap-5 text-xs font-medium uppercase tracking-[0.16em] md:gap-9">
+          <nav aria-label="Primary navigation" className="min-w-0">
+            <ul className="flex items-center gap-5 overflow-x-auto text-xs font-medium uppercase tracking-[0.16em] md:gap-8">
+              <li><a className="nav-link" href="#experience">Experience</a></li>
+              <li><a className="nav-link" href="#projects">Projects</a></li>
+              <li><a className="nav-link" href="#skills">Skills</a></li>
+              <li><a className="nav-link" href="#education">Education</a></li>
+              <li><a className="nav-link" href="#about">About</a></li>
+              <li><a className="nav-link" href="#contact">Contact</a></li>
               <li>
-                <a className="nav-link" href="#about">
-                  About
-                </a>
-              </li>
-              <li>
-                <a className="nav-link" href="#interests">
-                  Interests
-                </a>
-              </li>
-              <li className="hidden sm:block">
-                <a className="nav-link" href="#education">
-                  Education
+                <a
+                  className="whitespace-nowrap border border-black px-3 py-2 hover:bg-black hover:text-[#f2f2ed]"
+                  download
+                  href={profile.resume}
+                >
+                  Resume
                 </a>
               </li>
             </ul>
@@ -119,175 +136,226 @@ export default function App() {
       </header>
 
       <main id="top">
+        {/* Hero */}
         <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col justify-between px-5 pb-8 pt-12 md:px-10 md:pb-10 md:pt-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-3">
-              <p className="eyebrow">Hello, I&apos;m</p>
-              <p className="mt-2 text-sm text-black/55">Fresh graduate · Computer Science</p>
+              <img
+                alt={`Portrait of ${profile.name}`}
+                className="mb-6 aspect-[4/5] w-40 border border-black/25 object-cover md:w-full"
+                height={750}
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+                src="/images/profile.jpg"
+                width={600}
+              />
+              <p className="eyebrow">{profile.name}</p>
+              <p className="mt-2 text-sm text-black/65">{profile.location}</p>
             </div>
-            <h1 className="max-w-5xl text-[clamp(3.7rem,9.5vw,9rem)] font-medium leading-[0.86] tracking-[-0.065em] md:col-span-9">
-              Curious by
+            <h1 className="max-w-5xl text-[clamp(3rem,7.5vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em] md:col-span-9">
+              Full stack developer
               <br />
-              <span className="text-black/35">nature.</span>
+              <span className="text-black/45">and Computer Science graduate.</span>
             </h1>
           </div>
 
           <div className="grid items-end gap-8 border-t border-black/25 pt-6 md:grid-cols-12">
-            <p className="max-w-md text-base leading-relaxed text-black/65 md:col-span-6 md:col-start-4">
-              I&apos;m a recent Computer Science graduate who enjoys learning
-              how things work—whether it&apos;s technology, a new training
-              routine, a team play, or a great game.
+            <p className="max-w-md text-base leading-relaxed text-black/70 md:col-span-6 md:col-start-4">
+              University of San Carlos graduate with 300 hours of full stack
+              OJT on an ERP system, using Laravel, Vue, MySQL and Docker.
+              Looking to start my career in software development.
             </p>
-            <a
-              className="inline-flex w-fit items-center gap-3 border-b border-black pb-1 text-sm font-medium md:col-span-3 md:col-start-10 md:justify-self-end"
-              href="#about"
-            >
-              Get to know me
-              <span className="rotate-135">
-                <ArrowIcon />
-              </span>
-            </a>
-          </div>
-        </section>
-
-        <section
-          className="border-y border-black/25 bg-[#deded9]"
-          id="about"
-        >
-          <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-20 md:grid-cols-12 md:px-10 md:py-28">
-            <div className="md:col-span-3">
-              <p className="eyebrow">A little about me</p>
-            </div>
-            <div className="md:col-span-8 md:col-start-5">
-              <p className="text-[clamp(2rem,4.2vw,4.5rem)] font-medium leading-[1.05] tracking-[-0.045em]">
-                I&apos;m at the beginning of my career—and excited about
-                everything there is to learn.
-              </p>
-              <div className="mt-16 grid gap-10 border-t border-black/25 pt-8 sm:grid-cols-2 md:mt-24">
-                <p className="max-w-sm text-lg leading-relaxed">
-                  My Computer Science background taught me to break down
-                  problems, think logically, and stay patient when the answer
-                  is not obvious.
-                </p>
-                <p className="max-w-sm text-lg leading-relaxed text-black/60">
-                  Outside the screen, I find energy in music, fitness, flag
-                  football, and games. They keep me balanced, curious, and
-                  connected to other people.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section
-          className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28"
-          id="interests"
-        >
-          <div className="mb-12 flex items-end justify-between md:mb-16">
-            <div>
-              <p className="eyebrow">Beyond the screen</p>
-              <h2 className="mt-3 text-4xl font-medium tracking-[-0.04em] md:text-6xl">
-                Things I enjoy
-              </h2>
-            </div>
-            <p className="hidden max-w-xs text-right text-sm leading-relaxed text-black/50 sm:block">
-              The interests that shape how I think, recharge, and connect.
-            </p>
-          </div>
-
-          <div className="grid border-l border-t border-black/25 sm:grid-cols-2 lg:grid-cols-4">
-            {interests.map((interest) => (
-              <article
-                className="group flex min-h-[27rem] flex-col border-b border-r border-black/25 p-6 transition-colors hover:bg-[#deded9] md:p-7"
-                key={interest.number}
+            <div className="flex flex-col gap-4 md:col-span-3 md:col-start-10 md:items-end">
+              <a
+                className="inline-flex w-fit items-center gap-3 bg-[#11110f] px-5 py-3 text-sm font-medium text-[#f2f2ed] hover:bg-black/80"
+                download
+                href={profile.resume}
               >
-                <span className="text-xs tracking-[0.18em] text-black/45">
-                  {interest.number}
-                </span>
-                <div
-                  aria-hidden="true"
-                  className="flex flex-1 items-center justify-center text-black/25 transition-colors group-hover:text-black/45"
-                >
-                  {interest.visual}
-                </div>
-                <h3 className="text-2xl font-medium tracking-tight">
-                  {interest.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-black/55">
-                  {interest.description}
-                </p>
-              </article>
-            ))}
+                Download resume
+              </a>
+              <a
+                className="inline-flex w-fit items-center gap-3 border-b border-black pb-1 text-sm font-medium"
+                href="#experience"
+              >
+                View experience
+              </a>
+              <a
+                className="inline-flex w-fit items-center gap-3 border-b border-black pb-1 text-sm font-medium"
+                href="#contact"
+              >
+                Contact me
+              </a>
+            </div>
           </div>
         </section>
 
-        <section
-          className="border-y border-black/25 bg-[#11110f] text-[#f2f2ed]"
-          id="education"
-        >
+        {/* Experience */}
+        <section className="border-y border-black/25 bg-[#deded9]" id="experience">
           <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-20 md:grid-cols-12 md:px-10 md:py-28">
             <div className="md:col-span-3">
-              <p className="eyebrow text-white/55">Education</p>
+              <p className="eyebrow">Experience</p>
             </div>
             <div className="md:col-span-8 md:col-start-5">
-              <p className="text-sm uppercase tracking-[0.15em] text-white/45">
-                University of San Carlos
+              <p className="text-sm text-black/65">Itech-Rar Solutions, Inc.</p>
+              <h2 className="mt-4 text-[clamp(2.2rem,5vw,4.5rem)] font-medium leading-[1] tracking-[-0.05em]">
+                Full Stack Developer (OJT)
+              </h2>
+              {/* TODO: add 1 to 3 bullets on what YOU built in the ERP, plus dates. */}
+              <dl className="mt-14 border-t border-black/25 md:mt-20">
+                <div className="grid gap-2 border-b border-black/25 py-5 sm:grid-cols-[10rem_1fr]">
+                  <dt className="text-sm text-black/65">Duration</dt>
+                  <dd className="text-lg">300 OJT hours</dd>
+                </div>
+                <div className="grid gap-2 border-b border-black/25 py-5 sm:grid-cols-[10rem_1fr]">
+                  <dt className="text-sm text-black/65">Project</dt>
+                  <dd className="text-lg">Construction ERP system</dd>
+                </div>
+                {stack.map((group) => (
+                  <div
+                    className="grid gap-2 border-b border-black/25 py-5 sm:grid-cols-[10rem_1fr]"
+                    key={group.label}
+                  >
+                    <dt className="text-sm text-black/65">{group.label}</dt>
+                    <dd className="text-lg">{group.items.join(", ")}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28" id="projects">
+          <div className="grid gap-14 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">Projects</p>
+            </div>
+            <article className="md:col-span-8 md:col-start-5">
+              <p className="text-sm text-black/65">Machine learning · Academic project</p>
+              <h2 className="mt-4 text-[clamp(1.8rem,3.6vw,3.2rem)] font-medium leading-[1.05] tracking-[-0.04em]">
+                Clustering &amp; Classification of Lifestyle Habits for Identifying Stress Levels
+              </h2>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-black/70">
+                A machine learning model that predicts stress levels from seven
+                lifestyle habits.
               </p>
-              <h2 className="mt-6 text-[clamp(2.7rem,6.2vw,6.5rem)] font-medium leading-[0.95] tracking-[-0.055em]">
+              {/* TODO: add a GitHub or report link when available. */}
+              <dl className="mt-14 grid gap-8 border-t border-black/25 pt-8 sm:grid-cols-2">
+                <div>
+                  <dd className="text-5xl font-medium tracking-[-0.05em] md:text-7xl">93.24%</dd>
+                  <dt className="mt-2 text-sm text-black/65">Test accuracy</dt>
+                </div>
+                <div>
+                  <dd className="text-5xl font-medium tracking-[-0.05em] md:text-7xl">&gt; 0.95</dd>
+                  <dt className="mt-2 text-sm text-black/65">Macro AUC-ROC</dt>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section className="border-y border-black/25 bg-[#deded9]" id="skills">
+          <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-20 md:grid-cols-12 md:px-10 md:py-28">
+            <div className="md:col-span-3">
+              <p className="eyebrow">Technical skills</p>
+            </div>
+            <div className="grid gap-10 md:col-span-8 md:col-start-5">
+              {skills.map((group) => (
+                <div className="grid gap-4 sm:grid-cols-[10rem_1fr]" key={group.label}>
+                  <h3 className="text-sm text-black/65">{group.label}</h3>
+                  <Tags items={group.items} />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Education */}
+        <section className="bg-[#11110f] text-[#f2f2ed]" id="education">
+          <div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-20 md:grid-cols-12 md:px-10 md:py-28">
+            <div className="md:col-span-3">
+              <p className="eyebrow text-white/65">Education</p>
+            </div>
+            <div className="md:col-span-8 md:col-start-5">
+              <p className="text-sm text-white/65">University of San Carlos · 2023 to 2026</p>
+              <h2 className="mt-4 text-[clamp(2.2rem,5vw,4.5rem)] font-medium leading-[1] tracking-[-0.05em]">
                 Bachelor of Science in Computer Science
               </h2>
-              <div className="mt-16 grid gap-8 border-t border-white/25 pt-7 sm:grid-cols-2 md:mt-24">
-                <div>
-                  <p className="eyebrow text-white/45">Chapter</p>
-                  <p className="mt-3 text-lg">University graduate</p>
+              <dl className="mt-14 border-t border-white/25">
+                <div className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]">
+                  <dt className="text-sm text-white/65">GWA</dt>
+                  <dd className="text-lg">1.54</dd>
                 </div>
-                <div>
-                  <p className="eyebrow text-white/45">What&apos;s next</p>
-                  <p className="mt-3 max-w-sm text-lg leading-relaxed text-white/70">
-                    Looking forward to putting my foundation into practice,
-                    learning from a great team, and growing through real-world
-                    challenges.
-                  </p>
+                <div className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]">
+                  <dt className="text-sm text-white/65">Senior high school</dt>
+                  <dd className="text-lg">STEM, University of San Carlos · 2021 to 2023</dd>
                 </div>
+                {certifications.map((cert) => (
+                  <div
+                    className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]"
+                    key={cert.title}
+                  >
+                    <dt className="text-sm text-white/65">Certification</dt>
+                    <dd className="text-lg">
+                      {cert.title} · {cert.year}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </section>
+
+        {/* About */}
+        <section className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28" id="about">
+          <div className="grid gap-14 md:grid-cols-12">
+            <div className="md:col-span-3">
+              <p className="eyebrow">About</p>
+            </div>
+            <div className="md:col-span-8 md:col-start-5">
+              <p className="text-[clamp(1.8rem,3.6vw,3.2rem)] font-medium leading-[1.1] tracking-[-0.04em]">
+                I&apos;m eager to learn from real-world experience, contribute to
+                team projects, and grow into a reliable and capable developer.
+              </p>
+              <div className="mt-14 border-t border-black/25 pt-8">
+                <p className="text-sm text-black/65">Languages</p>
+                <p className="mt-4 text-lg">English, Filipino</p>
+              </div>
+            </div>
+
+            <div className="md:col-span-12">
+              <p className="eyebrow mb-6">Beyond the screen</p>
+              <div className="grid border-l border-t border-black/25 sm:grid-cols-2 lg:grid-cols-4">
+                {interests.map((interest) => (
+                  <article
+                    className="group flex min-h-[18rem] flex-col border-b border-r border-black/25 p-6 transition-colors hover:bg-[#deded9]"
+                    key={interest.number}
+                  >
+                    <span className="text-xs tracking-[0.18em] text-black/55">{interest.number}</span>
+                    <div
+                      aria-hidden="true"
+                      className="flex flex-1 items-center justify-center text-black/25 transition-colors group-hover:text-black/45"
+                    >
+                      {interest.visual}
+                    </div>
+                    <h3 className="text-xl font-medium tracking-tight">{interest.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-black/65">{interest.description}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        <section className="mx-auto max-w-[1440px] px-5 py-20 md:px-10 md:py-28">
-          <div className="grid gap-12 md:grid-cols-12">
-            <div className="md:col-span-3">
-              <p className="eyebrow">What guides me</p>
-              <h2 className="mt-3 text-4xl font-medium tracking-[-0.04em]">
-                Simple principles
-              </h2>
-            </div>
-            <ol className="md:col-span-8 md:col-start-5">
-              {principles.map((principle) => (
-                <li
-                  className="grid gap-3 border-t border-black/25 py-6 sm:grid-cols-[4rem_1fr_1.5fr] sm:gap-6"
-                  key={principle.number}
-                >
-                  <span className="text-sm text-black/45">{principle.number}</span>
-                  <h3 className="text-xl font-medium">{principle.title}</h3>
-                  <p className="max-w-sm leading-relaxed text-black/60">
-                    {principle.description}
-                  </p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </section>
-
-        <section
-          className="border-t border-black/25 bg-[#deded9] px-5 py-20 md:px-10 md:py-24"
-          id="contact"
-        >
+        {/* Contact */}
+        <section className="border-t border-black/25 bg-[#deded9] px-5 py-20 md:px-10 md:py-24" id="contact">
           <div className="mx-auto max-w-[1440px]">
-            <p className="eyebrow text-black/50">Let&apos;s connect</p>
+            <p className="eyebrow text-black/65">Contact</p>
             <a
               className="group mt-8 flex items-end justify-between border-b border-black/35 pb-5"
-              href="mailto:hello@yourname.com"
+              href={`mailto:${profile.email}`}
             >
               <span className="text-[clamp(3rem,8vw,8rem)] font-medium leading-none tracking-[-0.06em]">
                 Say hello.
@@ -296,22 +364,24 @@ export default function App() {
                 <ArrowIcon />
               </span>
             </a>
-            <footer className="mt-16 flex flex-col gap-6 text-sm text-black/60 sm:flex-row sm:items-end sm:justify-between md:mt-24">
+            <footer className="mt-16 flex flex-col gap-6 text-sm text-black/70 sm:flex-row sm:items-end sm:justify-between md:mt-24">
               <div>
-                <a
-                  className="block text-black hover:underline"
-                  href="mailto:hello@yourname.com"
-                >
-                  hello@yourname.com
+                <a className="block text-black hover:underline" href={`mailto:${profile.email}`}>
+                  {profile.email}
                 </a>
-                <span>Open to new opportunities</span>
+                <span>{profile.location} · Open to new opportunities</span>
               </div>
-              <div className="flex gap-6">
-                <a className="hover:text-black" href="#top">
-                  LinkedIn
-                </a>
-                <a className="hover:text-black" href="#top">
+              <div className="flex flex-wrap gap-6">
+                <a className="hover:text-black" href={profile.github} rel="noreferrer" target="_blank">
                   GitHub
+                </a>
+                {profile.linkedin && (
+                  <a className="hover:text-black" href={profile.linkedin} rel="noreferrer" target="_blank">
+                    LinkedIn
+                  </a>
+                )}
+                <a className="hover:text-black" download href={profile.resume}>
+                  Resume (PDF)
                 </a>
               </div>
               <a className="hover:text-black" href="#top">
