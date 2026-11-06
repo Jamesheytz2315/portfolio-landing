@@ -137,12 +137,12 @@ export default function App() {
 
       <main id="top">
         {/* Hero */}
-        <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col justify-between px-5 pb-8 pt-12 md:px-10 md:pb-10 md:pt-20">
+        <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col justify-between gap-12 px-5 pb-8 pt-12 md:px-10 md:pb-10 md:pt-20">
           <div className="grid gap-10 md:grid-cols-12">
             <div className="md:col-span-3">
               <img
                 alt={`Portrait of ${profile.name}`}
-                className="mb-6 aspect-[4/5] w-40 border border-black/25 object-cover md:w-full"
+                className="aspect-[4/5] w-40 border border-black/25 object-cover md:w-full"
                 height={750}
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
@@ -150,44 +150,60 @@ export default function App() {
                 src="/images/profile.jpg"
                 width={600}
               />
-              <p className="eyebrow">{profile.name}</p>
-              <p className="mt-2 text-sm text-black/65">{profile.location}</p>
             </div>
-            <h1 className="max-w-5xl text-[clamp(3rem,7.5vw,7rem)] font-medium leading-[0.9] tracking-[-0.06em] md:col-span-9">
-              Full stack developer
-              <br />
-              <span className="text-black/45">and Computer Science graduate.</span>
-            </h1>
+            <div className="md:col-span-9">
+              <p className="inline-flex items-center gap-2 border border-black/25 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em]">
+                <span aria-hidden="true" className="size-2 rounded-full bg-emerald-600" />
+                Open to work
+              </p>
+              <h1 className="mt-6 text-[clamp(3rem,7.5vw,7.5rem)] font-medium leading-[0.92] tracking-[-0.06em]">
+                James Matthew
+                <br />
+                Garcia
+              </h1>
+              <p className="mt-6 text-[clamp(1.25rem,2.2vw,2rem)] font-medium tracking-[-0.02em]">
+                Full Stack Developer
+                <span className="text-black/55"> · Laravel · Vue · MySQL</span>
+              </p>
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-black/70 md:text-lg">
+                Computer Science graduate with 300 hours of full stack OJT on an
+                ERP system. Looking to start my career in software development.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
+                <a
+                  className="inline-flex items-center bg-[#11110f] px-6 py-3.5 text-sm font-medium text-[#f2f2ed] hover:bg-black/80"
+                  download
+                  href={profile.resume}
+                >
+                  Download resume
+                </a>
+                <a
+                  className="inline-flex items-center border border-black px-6 py-3.5 text-sm font-medium hover:bg-black hover:text-[#f2f2ed]"
+                  href="#contact"
+                >
+                  Contact me
+                </a>
+                <a className="border-b border-black pb-1 text-sm font-medium" href="#experience">
+                  View experience ↓
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div className="grid items-end gap-8 border-t border-black/25 pt-6 md:grid-cols-12">
-            <p className="max-w-md text-base leading-relaxed text-black/70 md:col-span-6 md:col-start-4">
-              University of San Carlos graduate with 300 hours of full stack
-              OJT on an ERP system, using Laravel, Vue, MySQL and Docker.
-              Looking to start my career in software development.
-            </p>
-            <div className="flex flex-col gap-4 md:col-span-3 md:col-start-10 md:items-end">
-              <a
-                className="inline-flex w-fit items-center gap-3 bg-[#11110f] px-5 py-3 text-sm font-medium text-[#f2f2ed] hover:bg-black/80"
-                download
-                href={profile.resume}
-              >
-                Download resume
-              </a>
-              <a
-                className="inline-flex w-fit items-center gap-3 border-b border-black pb-1 text-sm font-medium"
-                href="#experience"
-              >
-                View experience
-              </a>
-              <a
-                className="inline-flex w-fit items-center gap-3 border-b border-black pb-1 text-sm font-medium"
-                href="#contact"
-              >
-                Contact me
-              </a>
+          <dl className="grid gap-6 border-t border-black/25 pt-6 sm:grid-cols-3">
+            <div>
+              <dt className="eyebrow text-black/55">Education</dt>
+              <dd className="mt-2">BS Computer Science, USC · 2026</dd>
             </div>
-          </div>
+            <div>
+              <dt className="eyebrow text-black/55">Experience</dt>
+              <dd className="mt-2">300-hour Full Stack OJT</dd>
+            </div>
+            <div>
+              <dt className="eyebrow text-black/55">Location</dt>
+              <dd className="mt-2">{profile.location}</dd>
+            </div>
+          </dl>
         </section>
 
         {/* Experience */}
