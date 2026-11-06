@@ -137,21 +137,9 @@ export default function App() {
 
       <main id="top">
         {/* Hero */}
-        <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col justify-between gap-12 px-5 pb-8 pt-12 md:px-10 md:pb-10 md:pt-20">
-          <div className="grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-3">
-              <img
-                alt={`Portrait of ${profile.name}`}
-                className="aspect-[4/5] w-40 border border-black/25 object-cover md:w-full"
-                height={750}
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                }}
-                src="/images/profile.jpg"
-                width={600}
-              />
-            </div>
-            <div className="md:col-span-9">
+        <section className="mx-auto flex min-h-[calc(100vh-4rem)] max-w-[1440px] flex-col justify-between gap-12 px-5 pb-8 pt-12 md:px-10 md:pb-10 md:pt-16">
+          <div className="grid items-center gap-14 md:grid-cols-12">
+            <div className="md:col-span-8">
               <p className="inline-flex items-center gap-2 border border-black/25 px-3 py-1.5 text-xs font-medium uppercase tracking-[0.16em]">
                 <span aria-hidden="true" className="size-2 rounded-full bg-emerald-600" />
                 Open to work
@@ -166,8 +154,9 @@ export default function App() {
                 <span className="text-black/55"> · Laravel · Vue · MySQL</span>
               </p>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-black/70 md:text-lg">
-                Computer Science graduate with 300 hours of full stack OJT on an
-                ERP system. Looking to start my career in software development.
+                Dean&apos;s Lister and Computer Science graduate with 300 hours of
+                full stack OJT on an ERP system. Looking to start my career in
+                software development.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4">
                 <a
@@ -188,12 +177,32 @@ export default function App() {
                 </a>
               </div>
             </div>
+
+            <figure className="relative order-first mx-auto w-52 sm:w-60 md:order-none md:col-span-4 md:mx-0 md:w-full md:max-w-sm md:justify-self-end">
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 translate-x-3 translate-y-3 border border-black/25 bg-[#deded9] md:translate-x-5 md:translate-y-5"
+              />
+              <img
+                alt={`Portrait of ${profile.name}`}
+                className="relative aspect-[4/5] w-full border border-black object-cover contrast-110 grayscale transition duration-500 hover:grayscale-0"
+                height={1000}
+                onError={(e) => {
+                  e.currentTarget.style.display = "none";
+                }}
+                src="/images/profile.jpg"
+                width={800}
+              />
+              <figcaption className="absolute bottom-0 left-0 border border-black bg-[#f2f2ed] px-3 py-2 text-[0.7rem] font-medium uppercase tracking-[0.16em]">
+                Cebu City, PH
+              </figcaption>
+            </figure>
           </div>
 
           <dl className="grid gap-6 border-t border-black/25 pt-6 sm:grid-cols-3">
             <div>
               <dt className="eyebrow text-black/55">Education</dt>
-              <dd className="mt-2">BS Computer Science, USC · 2026</dd>
+              <dd className="mt-2">BS Computer Science, USC · 2026 · Dean&apos;s Lister</dd>
             </div>
             <div>
               <dt className="eyebrow text-black/55">Experience</dt>
@@ -303,6 +312,10 @@ export default function App() {
                 <div className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]">
                   <dt className="text-sm text-white/65">GWA</dt>
                   <dd className="text-lg">1.54</dd>
+                </div>
+                <div className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]">
+                  <dt className="text-sm text-white/65">Honors</dt>
+                  <dd className="text-lg">Dean&apos;s Lister</dd>
                 </div>
                 <div className="grid gap-2 border-b border-white/25 py-5 sm:grid-cols-[10rem_1fr]">
                   <dt className="text-sm text-white/65">Senior high school</dt>
